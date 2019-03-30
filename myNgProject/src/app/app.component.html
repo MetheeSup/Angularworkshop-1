@@ -1,0 +1,71 @@
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<br><br>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <button class="btn btn-success" type="button">ชื่อ</button>
+  </div>
+  <input type="text" class="form-control" [(ngModel)]="name" placeholder="" aria-label=""
+    aria-describedby="basic-addon1">
+</div>
+Hello {{name}}
+<br><br>
+
+<table class="table table-hover table-responsive">
+  <thead>
+    <tr>
+      <th>studentId</th>
+      <th>name</th>
+      <th>weight</th>
+      <th>height</th>
+      <th>BMI</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{student.studentId}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.weight}}</td>
+      <td>{{student.height}}</td>
+      <!-- <td>{{student.weight/((student.height/100)*(student.height/100))}}</td> -->
+      <td>{{student.bmi}}</td>
+      <td *ngIf="student.bmi > 25">อ้วน</td>
+      <td *ngIf="student.bmi < 25">ผอม</td>
+      <td *ngIf="student.bmi== 25">ปกติ</td>
+    </tr>
+    <tr *ngFor="let s of studentList;">
+      <td>{{s.studentId}}</td>
+      <td>{{s.name}}</td>
+      <td>{{s.weight}}</td>
+      <td>{{s.height}}</td>
+      <td>{{s.bmi}}</td>
+      <td *ngIf="s.bmi > 25">อ้วน</td>
+      <td *ngIf="s.bmi < 25">ผอม</td>
+      <td *ngIf="s.bmi== 25">ปกติ</td>
+    </tr>
+  </tbody>
+</table>
